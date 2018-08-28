@@ -1,0 +1,16 @@
+[{
+	"modid": "opendb",
+	"name": "OpenDB",
+	"description": "OpenDB for OpenComputers.",
+ 	"version": "${version}",
+ 	"mcversion": "${mcversion}",
+	"url": "",
+	"updateUrl": "",
+	"authors": ["Michiyo"],
+	"credits": "Michiyo",
+	"logoFile": "",
+	"requiredMods": [ "Forge" ],
+	"dependencies": [ "OpenComputers" ],
+	"dependants": [ ],
+	"useDependencyInformation": "true"
+}]
