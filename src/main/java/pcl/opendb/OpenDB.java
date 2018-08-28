@@ -27,16 +27,16 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.network.NetworkRegistry;
 
 
-@Mod(modid=OpenDB.MODID, name="OpenPrinter", version=BuildInfo.versionNumber + "." + BuildInfo.buildNumber, dependencies = "required-after:OpenComputers@[1.4.0,)")
+@Mod(modid=OpenDB.MODID, name="OpenDB", version=BuildInfo.versionNumber + "." + BuildInfo.buildNumber, dependencies = "required-after:OpenComputers@[1.5.0,)")
 
 public class OpenDB {
 
-	public static final String MODID = "openprinter";
+	public static final String MODID = "opendb";
 	@Instance(value = MODID)
 	public static OpenDB instance;
 
 
-	@SidedProxy(clientSide="pcl.openprinter.ClientProxy", serverSide="pcl.openprinter.CommonProxy")
+	@SidedProxy(clientSide="pcl.opendb.ClientProxy", serverSide="pcl.opendb.CommonProxy")
 	public static CommonProxy proxy;
 	public static Config cfg = null;
 	public static boolean render3D = true;
@@ -44,7 +44,7 @@ public class OpenDB {
 	private static boolean debug = true;
 	public static final Logger  logger  = LogManager.getFormatterLogger(MODID);
 
-	public static CreativeTabs CreativeTab = new CreativeTab("OpenPrinter");
+	public static CreativeTabs CreativeTab = new CreativeTab("OpenDB");
 
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
@@ -55,8 +55,8 @@ public class OpenDB {
 			logger.info("Registering mod with OpenUpdater");
 			try {
 				Class.forName("pcl.mud.OpenUpdater").getDeclaredMethod("registerMod", ModContainer.class, URL.class, URL.class).invoke(null, FMLCommonHandler.instance().findContainerFor(this),
-						new URL("http://PC-Logix.com/OpenPrinter/get_latest_build.php?mcver=1.7.10"),
-						new URL("http://PC-Logix.com/OpenPrinter/changelog.php?mcver=1.7.10"));
+						new URL("http://PC-Logix.com/OpenDB/get_latest_build.php?mcver=1.7.10"),
+						new URL("http://PC-Logix.com/OpenDB/changelog.php?mcver=1.7.10"));
 			} catch (Throwable e) {
 				logger.info("OpenUpdater is not installed, not registering.");
 			}
